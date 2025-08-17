@@ -60,7 +60,7 @@ settings:
     description: Select your preferred theme, Rosé Pine Moon is enabled by setting light mode on
     type: class-select
     allowEmpty: false
-    default: rose-norm
+    default: rose-sakura
     options:
       -
         label: 'Rosé Pine'
@@ -68,6 +68,9 @@ settings:
       -
         label: 'Rosé Pine Moon'
         value: rose-moon
+      -
+        label: 'Rosé Pine Sakura'
+        value: rose-sakura
   -
     id: rosé-pine-theme-accents
     title: Theme accent
@@ -163,7 +166,7 @@ settings:
     default: var(--rp-rose)
     options:
     -
-      label: Lovesans-serif
+      label: Love-sans-serif
       value: var(--rp-love)
     -
       label: Rose
@@ -364,27 +367,27 @@ em {
   vertical-align: text-top;
 }
 .body {
-  --blockquote-background-color: var(--code-background);
+    --blockquote-background-color: var(--code-background);
 }
 .markdown-source-view.mod-cm6.is-live-preview .HyperMD-quote {
-  background-color: var(--code-background);
-  border: 0 solid;
-  border-color: var(--blockquote-border) !important;
-  border-left-width: 4px !important;
-  border-radius: 0 8px 8px 0;
-  line-height: 1.5em;
-  margin: 30px 0;
-  font-style: italic;
+    background-color: var(--code-background);
+    border: 0 solid;
+    border-color: var(--blockquote-border) !important;
+    border-left-width: 4px !important;
+    border-radius: 0 8px 8px 0;
+    line-height: 1.5em;
+    margin: 30px 0;
+    font-style: italic;
 }
 .markdown-preview-view blockquote {
-  background-color: var(--code-background);
-  border: 0 solid;
-  border-color: var(--blockquote-border) !important;
-  border-left-width: 4px !important;
-  border-radius: 0 8px 8px 0;
-  line-height: 1.5em;
-  margin: 30px 0;
-  font-style: italic;
+    background-color: var(--code-background);
+    border: 0 solid;
+    border-color: var(--blockquote-border) !important;
+    border-left-width: 4px !important;
+    border-radius: 0 8px 8px 0;
+    line-height: 1.5em;
+    margin: 30px 0;
+    font-style: italic;
 }
 .markdown-preview-view code {
   font-size: var(--font-size-code);
@@ -494,7 +497,7 @@ a:not(.internal-link) {
   font-style: italic;
 }
 .cm-s-obsidian pre.HyperMD-footnote span.cm-hmd-footnote,
-.cm-s-obsidian span.cm-footref {
+.cm-s-obsidian span.cm-foot-ref {
   color: var(--text-accent) !important;
 }
 .cm-fat-cursor {
@@ -785,7 +788,7 @@ ul .task-list-item ul::before {
   color: var(--inline-code) !important;
   bottom: 0 !important;
 }
-.cm-s-obsidian pre.HyperMD-codeblock {
+.cm-s-obsidian pre.HyperMD-code-block {
     font-family: var(--font-family-code), serif !important;
   font-size: var(--font-size-code) !important;
   padding: 1px !important;
@@ -794,11 +797,11 @@ ul .task-list-item ul::before {
   font-weight: 500;
   text-indent: 0 !important;
 }
-.HyperMD-codeblock-bg {
+.HyperMD-code-block-bg {
   border: 0 !important;
 }
 /*an active line highlight in vim normal mode*/
-.cm-fat-cursor .CodeMirror-activeline .CodeMirror-linebackground{
+.cm-fat-cursor .CodeMirror-active-line .CodeMirror-line-background{
   background-color: var(--text-selection) !important;
 }
 /*
@@ -967,6 +970,7 @@ body {
 }
 .theme-light,
 .theme-light.rose-dawn {
+    --code-background: #f4ede8;
     --rp-base: #faf4ed;
     --rp-surface: #fffaf3;
     --rp-overlay: #f2e9e1;
@@ -984,6 +988,7 @@ body {
     --rp-highlightHigh: #cecacd;
 }
 .theme-dark.rose-moon {
+    --code-background: #2a283e;
     --rp-base: #232136;
     --rp-surface: #2a273f;
     --rp-overlay: #393552;
@@ -1002,6 +1007,7 @@ body {
 }
 .theme-dark,
 .theme-dark.rose-norm {
+    --code-background: #21202e;
     --rp-base: #191724;
     --rp-surface: #1f1d2e;
     --rp-overlay: #26233a;
@@ -1017,6 +1023,50 @@ body {
     --rp-highlightLow: #21202e;
     --rp-highlightMed: #403d52;
     --rp-highlightHigh: #524f67;
+}
+/* 新的Sakura主题配色 */
+/* 樱花主题 - 浅色模式 */
+.theme-light.rose-sakura {
+    --code-background: #fff0f6;
+    --rp-base: #fff0f6;/* 浅粉底色 */
+    --rp-surface: #ffeff3;/* 稍深的粉底色 */
+    --rp-overlay: #fce1ea;/* 中等粉色 */
+    --rp-muted: #d4a5b5;/* 灰粉色 */
+    --rp-subtle: #c98da0;/* 柔和的樱花粉 */
+    --rp-text: #420016;/* 文本颜色 */
+    /* 重点色 - 粉色系 */
+    --rp-love: #e75480;/*H1*/
+    --rp-gold: #e7b34e;/*H4*/
+    --rp-rose: #ffb6c1;/*H3*/
+    --rp-iris: #d291bc;/*H2*/
+    --rp-pine: #e7a1c0;/*H6*/
+    --rp-foam: #e6b0cf;/*H5*/
+    /* 高亮色 */
+    --rp-highlightLow: #f9e1e9;/* 浅粉高亮 */
+    --rp-highlightMed: #e6d0d9;/* 中等粉高亮 */
+    --rp-highlightHigh: #d4c0c9;/* 深粉高亮 */
+}
+
+/* 樱花主题 - 深色模式 */
+.theme-dark.rose-sakura {
+    --code-background: #2d1e24;
+    --rp-base: #1e1218;/* 深紫红底色 */
+    --rp-surface: #2d1e24;/* 深紫红表面 */
+    --rp-overlay: #3d2a32;/* 紫红覆盖层 */
+    --rp-muted: #8a6a75;/* 灰紫红色 */
+    --rp-subtle: #a98895;/* 柔和的紫红色 */
+    --rp-text: #f0d8e0;/* 浅粉紫色文本 */
+    /* 重点色 - 保持与浅色模式一致 */
+    --rp-love: #e75480;/*H1*/
+    --rp-gold: #e7b34e;/*H4*/
+    --rp-rose: #ffb6c1;/*H3*/
+    --rp-iris: #d291bc;/*H2*/
+    --rp-pine: #e7a1c0;/*H6*/
+    --rp-foam: #e6b0cf;/*H5*/
+    /* 高亮色 */
+    --rp-highlightLow: #2d1e24;/* 深紫红低光 */
+    --rp-highlightMed: #4d3a42;/* 中等紫红光 */
+    --rp-highlightHigh: #5e4650;/* 深紫红光 */
 }
 .theme-light,
 .theme-dark {
@@ -1065,7 +1115,7 @@ body {
   --border-color: var(--rp-highlightMed);
   --font-monospace: var(--font-family-code);
 }
-/* =====以下为时雨ink内部自用的更改===== */
+/* =====以下为「ぽこたん_波可糖」做出的更改===== */
 body {
     /* 设置背景图片（雪樱主题） */
     /* background-image: url(https://youke1.picui.cn/s1/2025/08/16/68a096e1e71c6.jpg);*/
@@ -1131,8 +1181,10 @@ pre, /* 代码块容器 */
     }
 }
 
-/* ===== 为文件列表区域样式 ===== */
-.nav-files-container{
+/* ===== 文件列表区域和大纲区域的公共样式 ===== */
+.nav-files-container,
+.workspace-leaf-content[data-type="outline"] .view-content,
+.outline {
     backdrop-filter: blur(3px) !important; /* 毛玻璃模糊强度 */
     border-radius: 8px !important; /* 圆角效果 */
     padding: 10px !important; /* 内边距 */
@@ -1148,66 +1200,15 @@ pre, /* 代码块容器 */
         background-color: rgba(0, 0, 0, 0.15) !important;
     }
 }
-/* 确保文件列表中的文件夹和文件项保持清晰 */
-.nav-folder,
-.nav-file {
-    background: transparent !important;
-    backdrop-filter: none !important;
-}
-/* ===== 文件列表文字深色模式适配 ===== */
+
+/* ===== 列表项公共样式 ===== */
 .nav-file-title,
 .nav-folder-title,
-.nav-file-title-content {
-    /* 亮色模式文字颜色 */
-    .theme-light & {
-        color: #777777 !important; /* 深灰色确保在浅背景上可读 */
-    }
-
-    /* 深色模式文字颜色 */
-    .theme-dark & {
-        color: #eee !important; /* 浅灰色确保在深背景上可读 */
-    }
-
-    /* 添加文字阴影增强可读性 */
-    text-shadow: 0 1px 2px rgba(0,0,0,0.3);
-}
-/* 悬停效果 */
-.nav-file-title:hover,
-.nav-folder-title:hover {
-    /* 亮色模式悬停背景 */
-    .theme-light & {
-        background-color: rgba(255, 255, 255, 0.3) !important;
-    }
-
-    /* 深色模式悬停背景 */
-    .theme-dark & {
-        background-color: rgba(255, 255, 255, 0.3) !important;
-    }
-}
-/* ===== 大纲区域样式 ===== */
-.workspace-leaf-content[data-type="outline"] .view-content,
-.outline {
-    backdrop-filter: blur(3px) !important;
-    border-radius: 8px !important;
-    padding: 10px !important;
-    margin: 8px !important;
-
-    /* 亮色模式背景 */
-    .theme-light & {
-        background-color: rgba(255, 255, 255, 0.15) !important;
-    }
-
-    /* 深色模式背景 */
-    .theme-dark & {
-        background-color: rgba(0, 0, 0, 0.15) !important;
-    }
-}
-
-/* 大纲项文字 */
+.nav-file-title-content,
 .tree-item-inner {
     /* 亮色模式文字颜色 */
     .theme-light & {
-        color: #333 !important;
+        color: #777777 !important;
     }
 
     /* 深色模式文字颜色 */
@@ -1215,20 +1216,43 @@ pre, /* 代码块容器 */
         color: #eee !important;
     }
 
+    /* 添加文字阴影增强可读性 */
     text-shadow: 0 1px 2px rgba(0,0,0,0.3);
 }
 
-/* 大纲项悬停效果 */
+/* ===== 悬停效果公共样式 ===== */
+.nav-file-title:hover,
+.nav-folder-title:hover,
 .tree-item:hover {
     /* 亮色模式悬停背景 */
     .theme-light & {
-        background-color: rgba(255, 255, 255, 0.3) !important;
+        background-color: rgba(220, 200, 208, 0.45) !important;
+        border-radius: 4px !important;
     }
 
     /* 深色模式悬停背景 */
     .theme-dark & {
-        background-color: rgba(255, 255, 255, 0.3) !important;
+        background-color: rgba(75, 57, 66, 0.39) !important;
+        border-radius: 4px !important;
     }
+}
+
+/* ===== 文件列表中的文件夹和文件项保持清晰 ===== */
+.nav-folder,
+.nav-file {
+    background: transparent !important;
+    backdrop-filter: none !important;
+}
+/* ===== 选中项样式 ===== */
+/* 文件列表选中项 */
+.nav-file-title.is-active,
+.nav-folder-title.is-active {
+    border-radius: 4px !important;
+}
+/* 大纲区域选中项增强样式 */
+.tree-item.is-active {
+    background-color: rgba(255, 255, 255, 0.4) !important; /* 提高选中项可见性 */
+    box-shadow: 0 0 5px rgba(255, 255, 255, 0.2); /* 添加轻微阴影增强层次感 */
 }
 /*!
  * Original: Rosé Pine (https://github.com/rose-pine)
@@ -1236,5 +1260,8 @@ pre, /* 代码块容器 */
  * MIT License
  *
  * Modified by ぽこたん_波可糖 for Snow-Sakura
- * Changes: 添加了背景 + 新增了标题行、文件列表、大纲区域的毛玻璃效果，并针对深色模式做了适配
+ * Changes:
+    添加了背景
+    新增了标题行、大纲区域、文件列表区域毛玻璃效果
+    新增了一套配色：Sakura
  */
