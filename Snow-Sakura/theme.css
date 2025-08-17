@@ -45,10 +45,10 @@ img:hover {
 	  --font-size-h4: 20px;
 	  --font-size-h5: 19px;
 	  --font-size-h6: 18px;
-      --font-family-editor: "Inter", "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
-      --font-family-preview: Georgia, "Times New Roman", serif;
-      --font-family-code: "JetBrains Mono", "Fira Code", "Courier New", monospace;
-      --font-family-accent: "Inter", "Segoe UI", "Helvetica Neue", sans-serif;
+      --font-family-editor: "LXGWWenKai-Regular","Inter", "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+      --font-family-preview:"LXGWWenKai-Regular", Georgia, "Times New Roman", serif;
+      --font-family-code: "JetBrains Mono", "LXGWWenKai-Regular","Fira Code", "Courier New", monospace;
+      --font-family-accent: "LXGWWenKai-Regular","Inter", "Segoe UI", "Helvetica Neue", sans-serif;
 }
 /* @settings
 name: Rosé Pine Themes
@@ -1034,20 +1034,22 @@ body {
     --rp-muted: #d4a5b5;/* 灰粉色 */
     --rp-subtle: #c98da0;/* 柔和的樱花粉 */
     --rp-text: #420016;/* 文本颜色 */
-    /* 重点色 - 粉色系 */
-    --rp-love: #e75480;/*H1*/
-    --rp-gold: #e7b34e;/*H4*/
-    --rp-rose: #ffb6c1;/*H3*/
-    --rp-iris: #d291bc;/*H2*/
-    --rp-pine: #e7a1c0;/*H6*/
-    --rp-foam: #e6b0cf;/*H5*/
+    /* 重点色 - 樱花色系 */
+    --rp-love: #5A4A42;/*H1*/
+    --rp-iris: #7D5D5D;/*H2*/
+    --rp-rose: #B5495B;/*H3*/
+    --rp-gold: #3C5F4A;/*H4*/
+    --rp-foam: #8A6A9B;/*H5*/
+    --rp-pine: #D4A3B3;/*H6*/
     /* 高亮色 */
     --rp-highlightLow: #f9e1e9;/* 浅粉高亮 */
     --rp-highlightMed: #e6d0d9;/* 中等粉高亮 */
     --rp-highlightHigh: #d4c0c9;/* 深粉高亮 */
     --rp-codebox: #000000;/*代码块颜色*/
+    --rp-link-internal: #0086c3;/* 内部链接颜色 */
+    --rp-link-external: #ff9d6f;/* 外部链接颜色 */
+    --rp-link-hover: #ff69b4;/* 链接悬停颜色 */
 }
-
 /* 樱花主题 - 深色模式 */
 .theme-dark.rose-sakura {
     --code-background: #2d1e24;
@@ -1058,17 +1060,20 @@ body {
     --rp-subtle: #a98895;/* 柔和的紫红色 */
     --rp-text: #f0d8e0;/* 浅粉紫色文本 */
     /* 重点色 - 保持与浅色模式一致 */
-    --rp-love: #e75480;/*H1*/
-    --rp-gold: #e7b34e;/*H4*/
-    --rp-rose: #ffb6c1;/*H3*/
-    --rp-iris: #d291bc;/*H2*/
-    --rp-pine: #e7a1c0;/*H6*/
-    --rp-foam: #e6b0cf;/*H5*/
+    --rp-love:#5A4A42;/*H1*/
+    --rp-iris:#7D5D5D;/*H2*/
+    --rp-rose:#B5495B;/*H3*/
+    --rp-gold:#3C5F4A;/*H4*/
+    --rp-foam:#8A6A9B;/*H5*/
+    --rp-pine:#D4A3B3;/*H6*/
     /* 高亮色 */
     --rp-highlightLow: #2d1e24;/* 深紫红低光 */
     --rp-highlightMed: #4d3a42;/* 中等紫红光 */
     --rp-highlightHigh: #5e4650;/* 深紫红光 */
-    --rp-codebox: #000000;/*代码块颜色*/
+    --rp-codebox: #ffffff;/*代码块颜色*/
+    --rp-link-internal: #5698c3;/* 内部链接颜色 */
+    --rp-link-external: #ff9d6f;/* 外部链接颜色 */
+    --rp-link-hover: #ff69b4;/* 链接悬停颜色 */
 }
 .theme-light,
 .theme-dark {
@@ -1158,7 +1163,7 @@ pre, /* 代码块容器 */
     opacity: 0 !important;
 }
 
-/* ===== 标题样式（h1-h6）===== */
+/* ===== 标题毛玻璃效果（h1-h6）===== */
 .cm-header, /* 编辑模式标题 */
 .markdown-preview-view h1, /* 预览模式各级标题 */
 .markdown-preview-view h2,
@@ -1182,19 +1187,19 @@ pre, /* 代码块容器 */
         background-color: rgba(0, 0, 0, 0.4) !important;
     }
 }
+/*代码块毛玻璃样式*/
 .code-block-flair,pre{
     backdrop-filter: blur(2px) !important; /* 毛玻璃模糊效果 */
     padding: 6px 12px !important; /* 内边距 */
     border-radius: 6px !important; /* 圆角 */
     display: inline-block; /* 让背景只包裹文字 */
     margin: 8px 0 !important; /* 上下外边距 */
-
     /* 亮色模式背景 */
-    .theme-dark & {
+    .theme-light & {
         background-color: rgba(255, 255, 255, 0.4) !important;
     }
     /* 深色模式背景 */
-    .theme-light & {
+    .theme-dark & {
         background-color: rgba(0, 0, 0, 0.4) !important;
     }
 }
@@ -1271,6 +1276,20 @@ pre, /* 代码块容器 */
     background-color: rgba(255, 255, 255, 0.4) !important; /* 提高选中项可见性 */
     box-shadow: 0 0 5px rgba(255, 255, 255, 0.2); /* 添加轻微阴影增强层次感 */
 }
+/* ===== 链接样式 ===== */
+.internal-link {
+    -webkit-text-fill-color: var(--rp-link-internal) !important;
+}/* 内部链接 */
+
+.external-link {
+    -webkit-text-fill-color: var(--rp-link-external) !important;
+}/* 外部链接 */
+
+.internal-link:hover,
+.external-link:hover{
+    -webkit-text-fill-color: var(--rp-link-hover) !important;
+}/* 链接悬停 */
+
 /*!
  * Original: Rosé Pine (https://github.com/rose-pine)
  * Copyright (c) 2024 Rosé Pine
