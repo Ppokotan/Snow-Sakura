@@ -1045,6 +1045,7 @@ body {
     --rp-highlightLow: #f9e1e9;/* 浅粉高亮 */
     --rp-highlightMed: #e6d0d9;/* 中等粉高亮 */
     --rp-highlightHigh: #d4c0c9;/* 深粉高亮 */
+    --rp-codebox: #000000;/*代码块颜色*/
 }
 
 /* 樱花主题 - 深色模式 */
@@ -1067,6 +1068,7 @@ body {
     --rp-highlightLow: #2d1e24;/* 深紫红低光 */
     --rp-highlightMed: #4d3a42;/* 中等紫红光 */
     --rp-highlightHigh: #5e4650;/* 深紫红光 */
+    --rp-codebox: #000000;/*代码块颜色*/
 }
 .theme-light,
 .theme-dark {
@@ -1108,8 +1110,8 @@ body {
   --rp-h5: var(--rp-foam);
   --rp-h6: var(--rp-pine);
   --inline-code: var(--rp-iris);
-  --code-block: var(--rp-foam);
-  --pre-code: var(--rp-highlightLow);
+  --code-block: var(--rp-codebox);
+  --pre-code: var(--rp-codebox);
   --blockquote-border: var(--rp-love);
   --vim-cursor: var(--rp-rose);
   --border-color: var(--rp-highlightMed);
@@ -1180,7 +1182,22 @@ pre, /* 代码块容器 */
         background-color: rgba(0, 0, 0, 0.4) !important;
     }
 }
+.code-block-flair,pre{
+    backdrop-filter: blur(2px) !important; /* 毛玻璃模糊效果 */
+    padding: 6px 12px !important; /* 内边距 */
+    border-radius: 6px !important; /* 圆角 */
+    display: inline-block; /* 让背景只包裹文字 */
+    margin: 8px 0 !important; /* 上下外边距 */
 
+    /* 亮色模式背景 */
+    .theme-dark & {
+        background-color: rgba(255, 255, 255, 0.4) !important;
+    }
+    /* 深色模式背景 */
+    .theme-light & {
+        background-color: rgba(0, 0, 0, 0.4) !important;
+    }
+}
 /* ===== 文件列表区域和大纲区域的公共样式 ===== */
 .nav-files-container,
 .workspace-leaf-content[data-type="outline"] .view-content,
