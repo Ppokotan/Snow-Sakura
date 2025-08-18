@@ -1,4 +1,6 @@
 # Snow-Sakura
+# [See English Version](https://github.com/Ppokotan/Snow-Sakura/blob/main/README-EN.md)
+# Chinese/中文
 ## 版权声明
 - 基础框架: [Rosé Pine](https://github.com/rose-pine/obsidian) © 2024  
 - 修改及扩展: ぽこたん_波可糖 © 2025  
